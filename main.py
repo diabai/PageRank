@@ -1,10 +1,10 @@
 import numpy as np
 from numpy import matrix as Matrix
 
+# Author: Ibrahim Diabate
 
 def main():
     np.seterr(divide="ignore", invalid="ignore")
-   
 
     adjacencyMatrix = np.genfromtxt('graph.txt', dtype=np.int64, delimiter=" ")
     print("Adjacency Matrix")
@@ -19,7 +19,6 @@ def main():
         i, j, k= row
         mMatrix[j, i] = k
 
-
     print("mMatrix")
     print(mMatrix)
     beta = 0.85
@@ -32,8 +31,6 @@ def main():
 
     stochasticArray = mMatrix / sumVector
 
-    #print(stochasticArray)
-
     # Beta * stochastic array
     betaTimesStoch = stochasticArray * beta
     # print(betaTimesStoch)
@@ -43,14 +40,6 @@ def main():
     n = mMatrix.shape[0]
     #Leap probabilty
     leapProp = (1-beta)/n
-    #print(leapProp)
-
-    #mPrimeArray = betaTimesStoch #+ leapProp
-    # Normalizing mPrimeArray (i.e: Stochastic version of mPrimeArray
-   # mPrimeArray = mPrimeArray / mPrimeArray.sum(0)
-
-    #print(mPrimeArray)
-    #print(mPrimeArray.sum(0))
 
     # Repeat creates a list of 1 of size n  ; .transpose turn matrix to vertical
     # Original rank vector
@@ -58,12 +47,7 @@ def main():
     print("Original rank vector:")
     print(r)
 
-    # nextR = mPrimeArray * r
     prevR = np.zeros(r.shape)
-
-  # print(prevR)
-  #  print(prevR.sum())
-
 
     iterations = 0
     #print( mMatrix.sum(0))
@@ -74,7 +58,7 @@ def main():
         iterations += 1
 
     #Convereged rank vector
-    print("Converged R vector:")
+    print("Converged Rank vector:")
     print(r)
 
     print("Previous R:")
