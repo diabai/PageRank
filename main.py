@@ -31,7 +31,7 @@ def main():
     stochasticArray = mMatrix / sumVector
 
     print("Stochastic matrix: ")
-    print(stochasticArray)
+    print(stochasticArray.round(5))
 
     # Beta * stochastic array
     betaTimesStoch = stochasticArray * beta
@@ -45,7 +45,7 @@ def main():
     # Original rank vector
     r = Matrix(np.repeat(np.divide(1,n), n)).transpose()
     print("Original rank vector:")
-    print(r)
+    print(r.round(5))
 
     prevR = np.zeros(r.shape)
 
@@ -58,10 +58,10 @@ def main():
 
     #Convereged rank vector
     print("Converged Rank vector:")
-    print(r)
+    print(r.round(5))
 
     #print("Previous R:")
-   # print(prevR)
+    # print(prevR)
 
     #Total iterations
 
