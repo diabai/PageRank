@@ -4,15 +4,7 @@ from numpy import matrix as Matrix
 
 def main():
     np.seterr(divide="ignore", invalid="ignore")
-    mMatrix = Matrix(
-        [
-            [0, 0, 0, 0, 0, 0],
-            [1, 0, 1, 1, 1, 0],
-            [0, 1, 0, 1, 1, 0],
-            [0, 1, 1, 0, 1, 0],
-            [0, 1, 1, 1, 0, 0],
-            [0, 0, 0, 0, 1, 0]
-        ])
+   
 
     adjacencyMatrix = np.genfromtxt('graph.txt', dtype=np.int64, delimiter=" ")
     print("Adjacency Matrix")
