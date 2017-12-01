@@ -36,7 +36,6 @@ def main():
     # print(betaTimesStoch)
 
      # Size of a column
-    # print("Shape", mMatrix.shape[0])
     n = mMatrix.shape[0]
     #Leap probabilty
     leapProp = (1-beta)/n
